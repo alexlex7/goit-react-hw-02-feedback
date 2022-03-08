@@ -1,0 +1,23 @@
+.feedback {
+  padding: 15px;
+  border: 1px solid black;
+  width: fit-content;
+  margin: 20px auto 0px;
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 5%;
+}
+
+.btn {
+  margin-right: 20px;
+  width: 70px;
+}
+
+.lastBtn {
+  composes: btn;
+  margin-right: 0;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 500;
+}

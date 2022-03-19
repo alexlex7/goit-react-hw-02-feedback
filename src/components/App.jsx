@@ -11,11 +11,10 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleFeedback = e => {
-    const eventName = e.target.textContent.toLowerCase();
+  handleFeedback = label => {
     this.setState(prevState => {
       return {
-        [eventName]: prevState[eventName] + 1,
+        [label]: prevState[label] + 1,
       };
     });
   };
@@ -37,11 +36,15 @@ export class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
 
     return (
       <div>
         <Section title={'Please leave feedback'}>
-          <FeedbackOptions onLeaveFeedback={this.handleFeedback} />
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.handleFeedback}
+          />
         </Section>
 
         <Section title={'Statistics'}>
